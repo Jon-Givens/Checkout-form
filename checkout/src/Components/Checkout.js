@@ -15,6 +15,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm';
 import Review from './Review';
+import { Avatar } from '@mui/material';
 
 function Copyright() {
   return (
@@ -70,8 +71,9 @@ export default function Checkout() {
         }}
       >
         <Toolbar>
-          <Typography variant="h6" color="inherit" noWrap>
-            Steam
+          <Avatar src="https://www.freeiconspng.com/thumbs/steam-icon/steam-icon-4.png" />
+          <Typography variant="h5" color="inherit" noWrap align="right">
+            STEAM
           </Typography>
           <image href=''></image>
         </Toolbar>
@@ -79,7 +81,7 @@ export default function Checkout() {
       <Typography variant="h5">
         PAYMENT METHOD
       </Typography>
-    <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
+    <Container component="main"  sx={{ mb: 4, width: 700, height: 900}}>
         <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
           <Typography component="h1" variant="h4" align="center">
           </Typography>
