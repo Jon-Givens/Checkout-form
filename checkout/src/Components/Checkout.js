@@ -62,27 +62,28 @@ export default function Checkout() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <AppBar
+        style={{backgroundColor: '	#1b2838'}}
         position="absolute"
         color="default"
         elevation={0}
         sx={{
           position: 'relative',
-          borderBottom: (t) => `1px solid ${t.palette.divider}`,
+          borderBottom: (t) => `3px solid ${t.palette.divider}`,
         }}
       >
-        <Toolbar>
+        <Toolbar >
           <Avatar src="https://www.freeiconspng.com/thumbs/steam-icon/steam-icon-4.png" />
-          <Typography variant="h5" color="inherit" noWrap align="right">
+          <Typography variant="h5" color="inherit" noWrap align="right" style={{color: 'white'}}>
             STEAM
           </Typography>
           <image href=''></image>
         </Toolbar>
       </AppBar>
-      <Typography variant="h5">
+      <Typography variant="h5" style={{color: 'white'}}>
         PAYMENT METHOD
       </Typography>
     <Container component="main"  sx={{ mb: 4, width: 700, height: 900}}>
-        <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
+        <Paper variant="outlined" sx={{ backgroundColor: '#16202d',my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
           <Typography component="h1" variant="h4" align="center">
           </Typography>
           <React.Fragment>
@@ -108,11 +109,12 @@ export default function Checkout() {
                   )}
 
                   <Button
+                    style={{backgroundColor:'yellowGreen'}}
                     variant="contained"
                     onClick={handleNext}
                     sx={{ mt: 3, ml: 1 }}
                   >
-                    {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
+                    {activeStep === steps.length - 1 ? 'Place order' : 'Continue'}
                   </Button>
                 </Box>
               </React.Fragment>

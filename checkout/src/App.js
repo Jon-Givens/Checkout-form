@@ -5,7 +5,7 @@ import Checkout from './Components/Checkout';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{backgroundColor: '#1b2838'}}>
 
       <Checkout></Checkout>
     </div>
