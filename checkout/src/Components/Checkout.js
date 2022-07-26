@@ -57,6 +57,7 @@ export default function Checkout() {
   const handleBack = () => {
     setActiveStep(activeStep - 1);
   };
+  
 
   return (
     <ThemeProvider theme={theme}>
@@ -79,7 +80,7 @@ export default function Checkout() {
           <image href=''></image>
         </Toolbar>
       </AppBar>
-      <Typography variant="h5" style={{color: 'white'}}>
+      <Typography variant="h5" style={{color: 'white'}} align='left'>
         PAYMENT METHOD
       </Typography>
     <Container component="main"  sx={{ mb: 4, width: 700, height: 900}}>

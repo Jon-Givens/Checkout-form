@@ -5,55 +5,268 @@ import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { InputLabel } from '@mui/material';
+import styled from '@emotion/styled';
+import MenuItem from '@mui/material/MenuItem';
 
-const boxStyle = [
 
-
-]
 
 const paymentMethods = [
     {
+        value: 'My Steam Wallet',
         label: 'My Steam Wallet'
     },
     {
+        value: 'Paypal',
         label: 'PayPal'
     },
     {
+        value: 'Visa',
         label: 'Visa'
     },
     {
+        value: 'Mastercard',
         label: 'Mastercard'
     },
     {
+        value: 'American Express',
         label: 'American Express'
     },
     {
+        value: 'Discover',
         label: 'Discover'
     },
     {
+        value: 'JCB',
         label: 'JCB'
     },
 ]
 
-
+const statesList = [
+  {
+      value: 'Alabama',
+      label: 'Alabama'
+  },
+  {
+      value: 'Alaska',
+      label: 'Alaska'
+  },
+  {
+      value: 'Arizona',
+      label: 'Arizona'
+  },
+  {
+      value: 'Arkansas',
+      label: 'Arkansas'
+  },
+  {
+      value: 'California',
+      label: 'California'
+  },
+  {
+      value: 'Colorado',
+      label: 'Colorado'
+  },
+  {
+      value: 'Connecticut',
+      label: 'Connecticut'
+  },
+  {
+      value: 'Delaware',
+      label: 'Delaware'
+  },
+  {
+      value: 'Florida',
+      label: 'Florida'
+  },
+  {
+      value: 'Georgia',
+      label: 'Georgia'
+  },
+  {
+      value: 'Hawaii',
+      label: 'Hawaii'
+  },
+  {
+      value: 'Idaho',
+      label: 'Idaho'
+  },
+  {
+      value: 'Illinois',
+      label: 'Illinois'
+  },
+  {
+      value: 'Indiana',
+      label: 'Indiana'
+  },
+  {
+      value: 'Iowa',
+      label: 'Iowa '
+  },
+  {
+      value: 'Kansas',
+      label: 'Kansas'
+  },
+  {
+      value: 'Kentucky',
+      label: 'Kentucky'
+  },
+  {
+      value: 'Louisiana',
+      label: 'Louisiana'
+  },
+  {
+    value: 'Maine',
+    label: 'Maine'
+  },
+  {
+    value: 'Maryland',
+    label: 'Maryland'
+  },
+  {
+    value: 'Massachusetts',
+    label: 'Massachusetts'
+  },
+  {
+    value: 'Michigan',
+    label: 'Michigan'
+  },
+  {
+    value: 'Visa',
+    label: 'Visa'
+  },
+  {
+    value: 'Mastercard',
+    label: 'Mastercard'
+  },
+  {
+    value: 'American Express',
+    label: 'American Express'
+  },
+  {
+    value: 'Discover',
+    label: 'Discover'
+  },
+  {
+    value: 'JCB',
+    label: 'JCB'
+  },
+  {
+    value: 'JCB',
+    label: 'JCB'
+  },
+  {
+  value: 'JCB',
+  label: 'JCB'
+  },
+  {
+  value: 'JCB',
+  label: 'JCB'
+  },
+  {
+    value: 'My Steam Wallet',
+    label: 'My Steam Wallet'
+  },
+  {
+    value: 'Paypal',
+    label: 'PayPal'
+  },
+  {
+    value: 'Visa',
+    label: 'Visa'
+  },
+  {
+    value: 'Mastercard',
+    label: 'Mastercard'
+  },
+  {
+    value: 'American Express',
+    label: 'American Express'
+  },
+  {
+    value: 'Discover',
+    label: 'Discover'
+  },
+  {
+    value: 'JCB',
+    label: 'JCB'
+  },
+  {
+    value: 'JCB',
+    label: 'JCB'
+  },
+  {
+  value: 'JCB',
+  label: 'JCB'
+  },
+  {
+  value: 'JCB',
+  label: 'JCB'
+  },
+  {
+    value: 'My Steam Wallet',
+    label: 'My Steam Wallet'
+  },
+  {
+    value: 'Paypal',
+    label: 'PayPal'
+  },
+  {
+    value: 'Visa',
+    label: 'Visa'
+  },
+  {
+    value: 'Mastercard',
+    label: 'Mastercard'
+  },
+  {
+    value: 'American Express',
+    label: 'American Express'
+  },
+  {
+    value: 'Discover',
+    label: 'Discover'
+  },
+  {
+    value: 'JCB',
+    label: 'JCB'
+  },
+  {
+    value: 'JCB',
+    label: 'JCB'
+  },
+  {
+  value: 'JCB',
+  label: 'JCB'
+  },
+  {
+  value: 'JCB',
+  label: 'JCB'
+  },
+]
 
 export default function AddressForm() {
+  const [currency, setCurrency] = React.useState('EUR');
+
+  const handleChange = (event) => {
+    setCurrency(event.target.value);
+  };
+
   return (
     <React.Fragment>
       <Grid item xs={12} sm={4} align="left" >
-        <TextField
-            required
-            select
-            value={paymentMethods}
-            id="paymentMethod"
-            name="paymentMethod"
-            label="Payment Method"
-            autoComplete="given-name"
-            variant="outlined"
-
-            InputLabelProps={{ shrink: true }} 
-            sx={{width: 250 }}
-          />
+      <TextField
+          id="outlined-select-currency"
+          select
+          label="Select"
+          value={currency}
+          onChange={handleChange}
+        >
+          {paymentMethods.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+        </TextField>
       </Grid>
       <Typography variant="h5" gutterBottom align='left' pt={4} style={{color: 'white'}}>
         BILLING INFORMATION
@@ -104,13 +317,19 @@ export default function AddressForm() {
             InputLabelProps={{ shrink: true }}
           />
           <TextField
-            id="state"
-            name="state"
-            label="State/Province/Region"
-            sx={{width: 250}}
-            variant="outlined"
-            InputLabelProps={{ shrink: true }}
-          />
+          id="outlined-select-currency"
+          select
+          label="Select"
+          value={currency}
+          onChange={handleChange}
+          sx={{width:250 }}
+        >
+          {paymentMethods.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+        </TextField>
         </Grid>
         <Grid item  align="left" sx={{width: 1000}}>
           <TextField
@@ -151,7 +370,7 @@ export default function AddressForm() {
             label="Save my payment information so checkout is easy next time"
           />
         </Grid>
-        <Typography align="left" style={{color: 'white'}}>
+        <Typography align="left" style={{color: 'white', fontWeight: 'normal'}}>
         In the event your Steam Wallet balance doesn’t cover the full cost of this transaction, you’ll be
         asked to cover the remaining balance due with a secondary payment method.
         </Typography>
@@ -161,5 +380,6 @@ export default function AddressForm() {
         </Typography>
       </Grid>
     </React.Fragment>
+
   );
 }
