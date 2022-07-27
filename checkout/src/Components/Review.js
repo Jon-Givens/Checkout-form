@@ -7,9 +7,8 @@ import Grid from '@mui/material/Grid';
 
 const products = [
   {
-    name: 'Product 1',
-    desc: 'A nice thing',
-    price: '$9.99',
+    name: 'Stray',
+    price: '$29.99',
   },
   {
     name: 'Product 2',
@@ -41,12 +40,12 @@ export default function Review() {
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
-        Order summary
+        
       </Typography>
       <List disablePadding>
         {products.map((product) => (
           <ListItem key={product.name} sx={{ py: 1, px: 0 }}>
-            <ListItemText primary={product.name} secondary={product.desc} />
+            <ListItemText primary={product.image} secondary={product.name} />
             <Typography variant="body2">{product.price}</Typography>
           </ListItem>
         ))}

@@ -17,6 +17,7 @@ import PaymentForm from './PaymentForm';
 import Review from './Review';
 import { Avatar } from '@mui/material';
 
+
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
@@ -84,7 +85,7 @@ export default function Checkout() {
         PAYMENT METHOD
       </Typography>
     <Container component="main"  sx={{ mb: 4, width: 700, height: 900}}>
-        <Paper variant="outlined" sx={{ backgroundColor: '#16202d',my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 }}}>
+        <Paper variant="outlined" sx={{ backgroundColor: 'white',my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 }}}>
           <Typography component="h1" variant="h4" align="center">
           </Typography>
           <React.Fragment>
@@ -98,6 +99,8 @@ export default function Checkout() {
                   confirmation, and will send you an update when your order has
                   shipped.
                 </Typography>
+                <Avatar src="/src/Components/stray.jpg">
+                </Avatar>
               </React.Fragment>
             ) : (
               <React.Fragment>
