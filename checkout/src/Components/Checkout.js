@@ -84,7 +84,7 @@ export default function Checkout() {
         PAYMENT METHOD
       </Typography>
     <Container component="main"  sx={{ mb: 4, width: 700, height: 900}}>
-        <Paper variant="outlined" sx={{ backgroundColor: '#16202d',my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
+        <Paper variant="outlined" sx={{ backgroundColor: '#16202d',my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 }}}>
           <Typography component="h1" variant="h4" align="center">
           </Typography>
           <React.Fragment>

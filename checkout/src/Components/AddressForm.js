@@ -8,7 +8,16 @@ import { InputLabel } from '@mui/material';
 import styled from '@emotion/styled';
 import MenuItem from '@mui/material/MenuItem';
 
-
+const styles = theme => ({
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit
+  },
+  borderOutline: {
+    borderColor: "white",
+    borderWidth: 2
+  }
+});
 
 const paymentMethods = [
     {
@@ -131,116 +140,116 @@ const statesList = [
     label: 'Michigan'
   },
   {
-    value: 'Visa',
-    label: 'Visa'
+    value: 'Minnesota',
+    label: 'Minnesota'
   },
   {
     value: 'Mastercard',
     label: 'Mastercard'
   },
   {
-    value: 'American Express',
-    label: 'American Express'
+    value: 'Mississippi',
+    label: 'Mississippi'
   },
   {
-    value: 'Discover',
-    label: 'Discover'
+    value: 'Missouri',
+    label: 'Missouri'
   },
   {
-    value: 'JCB',
-    label: 'JCB'
+    value: 'Montana',
+    label: 'Montana'
   },
   {
-    value: 'JCB',
-    label: 'JCB'
+    value: 'Nebraska',
+    label: 'Nebraska'
   },
   {
-  value: 'JCB',
-  label: 'JCB'
+  value: 'Nevada',
+  label: 'Nevada'
   },
   {
-  value: 'JCB',
-  label: 'JCB'
+  value: 'New Hampshire',
+  label: 'New Hampshire'
   },
   {
-    value: 'My Steam Wallet',
-    label: 'My Steam Wallet'
+    value: 'New Jersey',
+    label: 'New Jersey'
   },
   {
-    value: 'Paypal',
-    label: 'PayPal'
+    value: 'New Mexico',
+    label: 'New Mexico'
   },
   {
-    value: 'Visa',
-    label: 'Visa'
+    value: 'New York',
+    label: 'New York'
   },
   {
-    value: 'Mastercard',
-    label: 'Mastercard'
+    value: 'North Carolina',
+    label: 'North Carolina'
   },
   {
-    value: 'American Express',
-    label: 'American Express'
+    value: 'North Dakota',
+    label: 'North Dakota'
   },
   {
-    value: 'Discover',
-    label: 'Discover'
+    value: 'Ohio',
+    label: 'Ohio'
   },
   {
-    value: 'JCB',
-    label: 'JCB'
+    value: 'Oklahoma',
+    label: 'Oklahoma'
   },
   {
-    value: 'JCB',
-    label: 'JCB'
+    value: 'Oregon',
+    label: 'Oregon'
   },
   {
-  value: 'JCB',
-  label: 'JCB'
+  value: 'Pennsylvania',
+  label: 'Pennsylvania'
   },
   {
-  value: 'JCB',
-  label: 'JCB'
+  value: 'Rhode Island',
+  label: 'Rhode Island'
   },
   {
-    value: 'My Steam Wallet',
-    label: 'My Steam Wallet'
+    value: 'South Carolina',
+    label: 'South Carolina'
   },
   {
-    value: 'Paypal',
-    label: 'PayPal'
+    value: 'South Dakota',
+    label: 'South Dakota'
   },
   {
-    value: 'Visa',
-    label: 'Visa'
+    value: 'Tennessee',
+    label: 'Tennessee'
   },
   {
-    value: 'Mastercard',
-    label: 'Mastercard'
+    value: 'Texas',
+    label: 'Texas'
   },
   {
-    value: 'American Express',
-    label: 'American Express'
+    value: 'Utah',
+    label: 'Utah'
   },
   {
-    value: 'Discover',
-    label: 'Discover'
+    value: 'Vermont',
+    label: 'Vermont'
   },
   {
-    value: 'JCB',
-    label: 'JCB'
+    value: 'Virginia',
+    label: 'Virginia'
   },
   {
-    value: 'JCB',
-    label: 'JCB'
+    value: 'Washington',
+    label: 'Washington'
   },
   {
-  value: 'JCB',
-  label: 'JCB'
+  value: 'West Virginia',
+  label: 'West Virginia'
   },
   {
-  value: 'JCB',
-  label: 'JCB'
+  value: 'Wisconsin',
+  label: 'Wisconsin'
   },
 ]
 
@@ -260,6 +269,7 @@ export default function AddressForm() {
           label="Select"
           value={currency}
           onChange={handleChange}
+          style={{width: 250}}
         >
           {paymentMethods.map((option) => (
             <MenuItem key={option.value} value={option.value}>
@@ -272,7 +282,7 @@ export default function AddressForm() {
         BILLING INFORMATION
       </Typography>
       <Grid container spacing={1}>
-        <Grid item  sx={{width: 1000,}} align="left">
+        <Grid item  sx={{width: 1000}} align="left">
             <TextField
               required
               sx={{ width: 125, height: 1}}
@@ -305,7 +315,7 @@ export default function AddressForm() {
             InputLabelProps={{ shrink: true }}
           />
         </Grid>
-        <Grid item sx={{width: 1000}} align="left" spacing={2}>
+        <Grid  item sx={{width: 2000}} align="left" spacing={5}>
           <TextField
           sx={{width: 250}}
             required
@@ -324,7 +334,7 @@ export default function AddressForm() {
           onChange={handleChange}
           sx={{width:250 }}
         >
-          {paymentMethods.map((option) => (
+          {statesList.map((option) => (
             <MenuItem key={option.value} value={option.value}>
               {option.label}
             </MenuItem>
@@ -354,7 +364,7 @@ export default function AddressForm() {
         </Grid>
         <Grid item xs={12} align="left" sx={{width: 250 }}>
           <TextField
-            sx={{width: 250}}
+            sx={{width: 250, "& .MuiOutlinedInput-root.Mui-disabled":{"& > fieldset": {border: '1px solid green'}}}}
             required
             id="country"
             name="country"
