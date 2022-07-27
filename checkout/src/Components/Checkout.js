@@ -69,6 +69,7 @@ export default function Checkout() {
         color="default"
         elevation={0}
         sx={{
+
           position: 'relative',
           borderBottom: (t) => `3px solid ${t.palette.divider}`,
         }}

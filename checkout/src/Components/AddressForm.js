@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import { InputLabel } from '@mui/material';
+import { InputLabel, Stack } from '@mui/material';
 import styled from '@emotion/styled';
 import MenuItem from '@mui/material/MenuItem';
 
@@ -282,7 +282,8 @@ export default function AddressForm() {
         BILLING INFORMATION
       </Typography>
       <Grid container spacing={1}>
-        <Grid item  sx={{width: 1000}} align="left">
+        <Stack direction="row"  sx={{width: 1000}} align="left" spacing={7}>
+            <Stack direction="row">
             <TextField
               required
               sx={{ width: 125, height: 1}}
@@ -314,8 +315,9 @@ export default function AddressForm() {
             variant="outlined"
             InputLabelProps={{ shrink: true }}
           />
-        </Grid>
-        <Grid  item sx={{width: 2000}} align="left" spacing={5}>
+          </Stack>
+        </Stack>
+        <Stack direction="row" item sx={{width: 2000}} align="left" spacing={7}>
           <TextField
           sx={{width: 250}}
             required
@@ -340,8 +342,8 @@ export default function AddressForm() {
             </MenuItem>
           ))}
         </TextField>
-        </Grid>
-        <Grid item  align="left" sx={{width: 1000}}>
+        </Stack>
+        <Stack direction="row" item sx={{width: 2000}} align="left" spacing={7}>
           <TextField
             id="address2"
             name="address2"
@@ -361,7 +363,7 @@ export default function AddressForm() {
             variant="outlined"
             InputLabelProps={{ shrink: true }}
           />
-        </Grid>
+        </Stack>
         <Grid item xs={12} align="left" sx={{width: 250 }}>
           <TextField
             sx={{width: 250, "& .MuiOutlinedInput-root.Mui-disabled":{"& > fieldset": {border: '1px solid green'}}}}
